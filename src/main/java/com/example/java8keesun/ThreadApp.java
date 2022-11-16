@@ -1,7 +1,7 @@
 package com.example.java8keesun;
 
 public class ThreadApp {
-    /**
+    /*
      * thread는 순서를 보장하지 않는다.
      * 방법1: Thread를 extend 하고 run()을 override
      * 방법2: 생성자에 new Runnable, 람다로 교체 가능

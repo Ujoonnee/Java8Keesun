@@ -29,7 +29,7 @@ public class CallableApp {
         System.out.println("helloFuture.isDone = " + helloFuture.isDone());
         System.out.println("started");
 
-        /**
+        /*
          * cancel(boolean) : true는 즉시, false는 대기 후 종료
          * param과 관계없이 return 값을 받을 수 없다. -> get() 시도 시 CancellationException
          */
@@ -46,7 +46,7 @@ public class CallableApp {
             System.out.println(f.get());
         }
 
-        /**
+        /*
          * invokeAny : blockinig call, Future가 아니라 결과를 바로 return
          * executor에서 가장 먼저 종료되는 Callable의 결과를 return
          * thread의 갯수에 따라 결과가 달라질 수 있음

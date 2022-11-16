@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Excutor {
     public static void main(String[] args) {
-        /**
+        /*
          * ExecutorService의 thread pool에 설정한 개수의 thread가 존재
          * thread 개수 이상의 작업을 ES가 접수할 경우, Blocking Queue에 작업을 쌓아두고 대기시킴
          * 이후 작업이 종료된 thread가 Queue의 작업을 수행
@@ -25,7 +25,7 @@ public class Excutor {
         //주기를 두고 반복해서 실행, 단 shutdown이 interrupt 하면 종료됨
         scheduledExecutorService.scheduleAtFixedRate(getRunnable("Hello scheduled "), 1, 2, TimeUnit.SECONDS);
 
-        /**
+        /*
          * 주의
          * ExecutorService는 작업 실행 후 다음 작업이 들어올 때까지 대기 -> 프로세스가 종료되지 않음
          * 직접 종료시켜야 함
