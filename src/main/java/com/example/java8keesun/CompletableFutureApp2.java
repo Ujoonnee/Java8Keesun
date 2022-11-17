@@ -56,6 +56,26 @@ public class CompletableFutureApp2 {
             System.out.println("result = " + result);
         });
 
+        /*
+         * exceptionally : Exception을 파라미터로 받고, exception이 발생했을 때 실행할 코드를 정의
+         * handle : 결과와 Exception을 파라미터로 받고(BiFunction), 두 경우에 실행할 코드를 정의
+         */
+        boolean throwError = true;
+        CompletableFuture<String> futureError = CompletableFuture.supplyAsync(() -> {
+            if (throwError) {
+                throw new IllegalArgumentException();
+            }
+            return "Hello";
+        }).handle((result, ex) -> {
+            if (throwError) {
+                //throw new IllegalArgumentException();
+                return "Error from handle";
+            }
+            return "handle Successful";
+        }).exceptionally(ex -> {
+            return "Error from exceptionally";
+        });
+        System.out.println(futureError.get());
     }
 
     private static CompletableFuture<String> getWorld(String message) {

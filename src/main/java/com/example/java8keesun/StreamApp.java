@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Foo {
+public class StreamApp {
     public static void main(String[] args) {
 
         // Stream Api

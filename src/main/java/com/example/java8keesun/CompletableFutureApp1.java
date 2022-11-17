@@ -17,7 +17,7 @@ public class CompletableFutureApp1 {
         });
 
         CompletableFuture<String> future3 = CompletableFuture.supplyAsync(() -> {
-            System.out.println("4. return이 있는 경우 runAsync" + Thread.currentThread().getName());
+            System.out.println("4. callback이  Function일 경우 thenApply" + Thread.currentThread().getName());
             return "Hello";
         }).thenApply((s -> {
             System.out.println("5. Thread = " + Thread.currentThread().getName());
@@ -28,7 +28,7 @@ public class CompletableFutureApp1 {
             System.out.println("6. suuplyAsync는 특정 threadpool 사용 가능 = " + Thread.currentThread().getName());
             return "Hello";
         }, executorService).thenAccept((s -> {
-            System.out.println("7. callback이 Consumer 일 경우 thenAccept = " + Thread.currentThread().getName());
+            System.out.println("7. callback이 Consumer일 경우 thenAccept = " + Thread.currentThread().getName());
             System.out.println("8. "+ s.toLowerCase());
         }));
 
